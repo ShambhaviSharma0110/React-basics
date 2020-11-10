@@ -22,19 +22,58 @@ const formValid = ({ formErrors, ...rest }) => {
 };
 
 class App extends Component {
+  /*async postData()
+  {
+    try{
+      let res= {
+      "name":"Sanjay",
+      "username":"sun123",
+      "password":"hi@12",
+      "email":"sanjay@gmail.com",
+      "adgMember":true,
+      "bio":"Hi!, I'm a coder!"
+    }
+    } 
+    catch(e){
+      console.log(e)
+    }
+  }
+  */
+/* componentDidMount() {
+  // POST request using fetch with set headers
+  const requestOptions = {
+      method: 'POST',
+      headers: { 
+        "name":"Sanjay",
+        "username":"sun123",
+        "password":"hi@12",
+        "email":"sanjay@gmail.com",
+        "adgMember":true,
+        "bio":"Hi!, I'm a coder!"          
+      },
+      body: JSON.stringify({ title: 'React POST' })
+  };
+  fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
+      .then(response => response.json())
+      .then(data => this.setState({ postId: data.id }));
+}
+*/
   constructor(props) {
     super(props);
 
     this.state = {
       firstName: null,
-      lastName: null,
+      userName: null,
       email: null,
       password: null,
+      bio:null,
+      adgm:null,
       formErrors: {
         firstName: "",
-        lastName: "",
+        userName: "",
         email: "",
-        password: ""
+        password: "",
+        bio:"",
       }
     };
   }
@@ -46,9 +85,11 @@ class App extends Component {
       console.log(`
         --SUBMITTING--
         First Name: ${this.state.firstName}
-        Last Name: ${this.state.lastName}
+        Username: ${this.state.userName}
         Email: ${this.state.email}
         Password: ${this.state.password}
+        Bio: ${this.state.bio}
+        Adgm: ${this.state.adgm}
       `);
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
@@ -65,8 +106,8 @@ class App extends Component {
         formErrors.firstName =
           value.length < 3 ? "minimum 3 characaters required" : "";
         break;
-      case "lastName":
-        formErrors.lastName =
+      case "userName":
+        formErrors.userName =
           value.length < 3 ? "minimum 3 characaters required" : "";
         break;
       case "email":
@@ -77,6 +118,9 @@ class App extends Component {
       case "password":
         formErrors.password =
           value.length < 6 ? "minimum 6 characaters required" : "";
+      case "bio":
+        formErrors.password =
+          value.length < 50 ? "minimum 50 characaters required" : "";
         break;
       default:
         break;
@@ -96,10 +140,10 @@ class App extends Component {
           <h1>Create Account</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
-              <label htmlFor="firstName">First Name</label>
+              <label htmlFor="firstName">Name</label>
               <input
                 className={formErrors.firstName.length > 0 ? "error" : null}
-                placeholder="First Name"
+                placeholder="Name"
                 type="text"
                 name="firstName"
                 noValidate
@@ -109,18 +153,18 @@ class App extends Component {
                 <span className="errorMessage">{formErrors.firstName}</span>
               )}
             </div>
-            <div className="lastName">
-              <label htmlFor="lastName">Last Name</label>
+            <div className="userName">
+              <label htmlFor="userName">Username</label>
               <input
-                className={formErrors.lastName.length > 0 ? "error" : null}
-                placeholder="Last Name"
+                className={formErrors.userName.length > 0 ? "error" : null}
+                placeholder="Username"
                 type="text"
-                name="lastName"
+                name="userName"
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.lastName.length > 0 && (
-                <span className="errorMessage">{formErrors.lastName}</span>
+              {formErrors.userName.length > 0 && (
+                <span className="errorMessage">{formErrors.userName}</span>
               )}
             </div>
             <div className="email">
@@ -151,9 +195,32 @@ class App extends Component {
                 <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
+            <div className="bio">
+              <label htmlFor="bio">Bio</label>
+              <input
+                className={formErrors.bio.length > 0 ? "error" : null}
+                placeholder="Bio"
+                type="text"
+                name="bio"
+                noValidate
+                onChange={this.handleChange}
+              />
+              {formErrors.bio.length > 0 && (
+                <span className="errorMessage">{formErrors.bio}</span>
+              )}
+            </div>
+            <div className="adm">
+              <label htmlFor="adgm">Adg Member</label>
+              <input
+                type="checkbox"
+                name="checkbox"
+                noValidate
+                onChange={this.handleChange}
+              />
+            </div>
             <div className="createAccount">
-              <button type="submit">Create Account</button>
-              <a href= "#">Already Have an Account?</a>
+              <button type="submit" onClick = { () => this.postData()}>Create Account</button>
+              <a href= "#">Already have an account?</a>
             </div>
           </form>
         </div>
