@@ -25,7 +25,7 @@ class App extends Component {
   async postData()
   {
     try{
-      let res= await fetch('',
+      let res= await fetch('https://adg-codingportal.herokuapp.com/',
       {
         method:'Post',
         mode:'no-cors',
