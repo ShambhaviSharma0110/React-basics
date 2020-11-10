@@ -22,42 +22,34 @@ const formValid = ({ formErrors, ...rest }) => {
 };
 
 class App extends Component {
-  /*async postData()
+  async postData()
   {
     try{
-      let res= {
-      "name":"Sanjay",
-      "username":"sun123",
-      "password":"hi@12",
-      "email":"sanjay@gmail.com",
-      "adgMember":true,
-      "bio":"Hi!, I'm a coder!"
-    }
-    } 
+      let res= await fetch('',
+      {
+        method:'Post',
+        mode:'no-cors',
+        headers:{
+          'Accept':'application/json',
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(
+          {
+            "name":"Sanjay",
+            "username":"sun123",
+            "email":"sanjay@gmail.com",
+            "password":"hi@12", 
+            "bio":"Hi!, I'm a coder!",          
+            "adgMember":true            
+          })
+        });
+        console.log(res)
+      } 
     catch(e){
       console.log(e)
     }
   }
-  */
-/* componentDidMount() {
-  // POST request using fetch with set headers
-  const requestOptions = {
-      method: 'POST',
-      headers: { 
-        "name":"Sanjay",
-        "username":"sun123",
-        "password":"hi@12",
-        "email":"sanjay@gmail.com",
-        "adgMember":true,
-        "bio":"Hi!, I'm a coder!"          
-      },
-      body: JSON.stringify({ title: 'React POST' })
-  };
-  fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
-      .then(response => response.json())
-      .then(data => this.setState({ postId: data.id }));
-}
-*/
+
   constructor(props) {
     super(props);
 
