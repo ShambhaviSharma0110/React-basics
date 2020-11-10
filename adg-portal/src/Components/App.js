@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Footer from './Footer';
 import Contests from './Contests';
-import Profile from './Profile';
+//import Profile from './Profile';
 
 
  class App extends Component {

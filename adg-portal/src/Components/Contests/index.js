@@ -4,13 +4,14 @@ import './index.css';
  class index extends Component {
     render() {
         return (
-            <div>
+            <div className= "contest">
                 <h1>Contests</h1>
                 <ul>
                 <h3>Difficulty</h3>
-                <input type = "radio" value = "difficulty">Easy</input>
-                <input type = "radio" value = "difficulty">Medium</input>
-                <input type = "radio" value = "difficulty">Hard</input>
+                <input type = "radio" value = "difficulty" />Easy
+                <input type = "radio" value = "difficulty"/>Medium
+                <input type = "radio" value = "difficulty"/>Hard
+
                 </ul>
                
             </div>
