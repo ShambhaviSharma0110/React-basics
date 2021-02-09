@@ -12,7 +12,7 @@ import Contests from './Contests';
             <div>
                 <Navbar/>
                 <Home/>
-                <Contests/>
+                
                 <Footer/>
             </div>
         )

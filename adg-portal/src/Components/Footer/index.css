@@ -1,6 +1,64 @@
-.footer h1
+.footer
 {
-    background-color: #394867;
-    margin-top: 30%;
+        background-color: #394867;
+        margin-top: 30%;
+        padding:2%;
+            
+}
+.footer-icons{
+    margin-left:45%;
+    
+}
+a
+{
     padding:2%;
 }
+
+#one
+{
+ margin-left:-5%;
+}
+@media screen and (max-width: 768px) {
+    .footer-icons{
+        margin-left:45%;        
+    }
+    #one
+    {
+        margin-left:-10%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .footer
+    {
+        font-size:50%;
+        margin-top:20%;
+    }
+    .footer-icons{
+        margin-left:40%; 
+        font-size:70%;       
+    }
+    #one
+    {
+        margin-left:-5%;
+        font-size:70%;
+    }
+    
+}
+/*@media screen and (max-width: 1024px) {/
+    .footer
+    {
+        font-size:60%;
+        margin-top:20%;
+    }
+    .footer-icons{
+        margin-left:40%; 
+        font-size:100%;       
+    }
+    #one
+    {
+        margin-left:-5%;
+        font-size:200%;
+    }
+}
+*/

@@ -5,7 +5,16 @@ export class index extends Component {
     render() {
         return (
             <div className="footer">
-                <h1>Footer</h1>
+                <div class="footer-icons"> 
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <br></br>
+                <a href="#" id= "one">https://adgvit.com/</a>
+
+
+            </div>
+            
             </div>
         )
     }

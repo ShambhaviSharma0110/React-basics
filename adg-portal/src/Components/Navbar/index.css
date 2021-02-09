@@ -27,3 +27,32 @@
     color: #f1f6f9;
     text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+    body {
+        margin:0.5%;
+    }
+    .div ul li
+    {
+        display: inline-block;
+        margin-left:12%;
+    }
+
+}
+@media screen and (max-width: 360px) {
+    .div ul li
+    {
+        display: inline-block;
+        margin-left:2%;
+        font-size:60%;
+    }
+}
+/*
+@media screen and (max-width: 1024px) {
+    .div ul li
+    {
+        display: inline-block;
+        margin-left:5%;
+        font-size:150%;
+    }
+}
+*/

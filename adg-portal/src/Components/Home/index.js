@@ -5,7 +5,7 @@ import './index.css'
     render() {
         return (
             <div className = "home">
-                <h1>Welcome to the ADG Coding Portal!</h1>
+                <h1 id= "top">Welcome to the ADG Coding Portal!</h1>
                 <div className = "card1">
                     <a href = "cpp"><h1>C++</h1></a>
                 </div>
